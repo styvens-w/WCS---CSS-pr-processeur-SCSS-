@@ -1,0 +1,9 @@
+@mixin ring($size, $color) {
+  width: $size;
+  height: $size;
+  border: $size * 0.1 solid $color;
+  border-radius: 50%;
+  box-shadow: $size * 0.04 $size * 0.04 $size * 0.1 $color;
+  display: inline-block;
+  margin: 0 (-$size * 0.2);
+}

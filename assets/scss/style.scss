@@ -1,0 +1,60 @@
+@import "mixins";
+
+body {
+  font-family: 'Ringbearer', sans-serif;
+  text-align: center;
+  background-color: #f5f5dc;
+  color: #000;
+}
+
+.container {
+  padding: 20px;
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+
+    &--title {
+      margin: 0 20px;
+    }
+
+    &--ring {
+      @include ring(50px, #f86d10);
+    }
+  }
+
+  &__oneRing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+
+    &--ring {
+      @include ring(100px, #fbca01);
+    }
+
+    &--title {
+      margin-left: 50px;
+      font-size: 30px;
+    }
+  }
+
+  &__rings-container {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @for $i from 1 through 6 {
+      &--ring-#{$i} {
+        @include ring(20px * $i, #373736);
+      }
+    }
+  }
+
+  &__subtitle {
+    font-size: 32px;
+  }
+}
